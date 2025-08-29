@@ -1,16 +1,34 @@
-# hello_app
 
-A new Flutter project.
+# Incubyte TDD Assessment - String Calculator
 
-## Getting Started
+This repository contains a Flutter implementation of the String Calculator TDD Kata as part of the Incubyte recruitment process.
 
-This project is a starting point for a Flutter application.
+## Project Structure
+- `lib/main.dart`: Main Flutter app with UI.
+- `lib/string_calculator.dart`: Logic for the string calculator.
+- `test/string_calculator_test.dart`: Unit tests following TDD.
 
-A few resources to get you started if this is your first Flutter project:
+## How to Run
+1. Clone the repository: `git clone <your-repo-url>`.
+2. Navigate to the project directory: `cd string_calculator`.
+3. Run the app: `flutter run`.
+4. Run tests: `flutter test`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
+- [Empty Input]: ![Empty Input](./screenshots/empty_input.png)
+- [Single Number]: ![Single Number](./screenshots/single_number.png)
+- [Two Numbers]: ![Two Numbers](./screenshots/two_numbers.png)
+- [Custom Delimiter]: ![Custom Delimiter](./screenshots/custom_delimiter.png)
+- [Negative Number]: ![Negative Number](./screenshots/negative_number.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## TDD Process
+- Commits are made after each passing test.
+- Refactoring is performed after each step.
+- See commit history for detailed evolution.
+
+## Notes
+- The app supports all requirements: empty string, single/multiple numbers, new lines, custom delimiters, and negative number validation.
+- Tests are written using `flutter_test` to ensure code quality.
+
+## Submission
+This repository link can be submitted to Incubyte for review.

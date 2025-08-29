@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'string_calculator.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +19,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CalculatorScreen extends StatefulWidget {
+  const CalculatorScreen({super.key});
+
   @override
   _CalculatorScreenState createState() => _CalculatorScreenState();
 }
@@ -23,48 +28,12 @@ class CalculatorScreen extends StatefulWidget {
 class _CalculatorScreenState extends State<CalculatorScreen> {
   final _controller = TextEditingController();
   String _result = '0';
-
-  // Test Case 1: Empty string returns 0
-  // Test Case 2: Single number returns itself
-  // Test Case 3: Two numbers separated by comma returns sum
-  int add(String numbers) {
-    if (numbers.isEmpty) return 0;
-
-    // Test Case 4: Handle custom delimiter
-    String delimiter = ",";
-    if (numbers.startsWith("//")) {
-      int newLineIndex = numbers.indexOf("\n");
-      delimiter = numbers.substring(2, newLineIndex);
-      numbers = numbers.substring(newLineIndex + 1);
-    }
-
-    // Test Case 5: Handle new lines as delimiters
-    numbers = numbers.replaceAll("\n", delimiter);
-
-    // Test Case 6: Handle any amount of numbers
-    List<String> numArray = numbers.split(delimiter);
-    List<int> numbersList = [];
-
-    for (String num in numArray) {
-      if (num.trim().isNotEmpty) {
-        int number = int.parse(num.trim());
-        // Test Case 7: Throw exception for negative numbers
-        if (number < 0) {
-          throw FormatException(
-              "negative numbers not allowed ${numArray.where((n) => int.parse(n.trim()) < 0).join(',')}");
-        }
-        numbersList.add(number);
-      }
-    }
-
-    // Test Case 8: Return sum of all numbers
-    return numbersList.isNotEmpty ? numbersList.reduce((a, b) => a + b) : 0;
-  }
+  final StringCalculator _calculator = StringCalculator();
 
   void calculate() {
     try {
       setState(() {
-        _result = add(_controller.text).toString();
+        _result = _calculator.add(_controller.text).toString();
       });
     } catch (e) {
       setState(() {
