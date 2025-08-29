@@ -18,7 +18,7 @@ This repository contains a Flutter implementation of the String Calculator TDD K
 - [Empty Input]: ![Empty Input](./screenshots/empty_input.png)
 - [Single Number]: ![Single Number](./screenshots/single_number.png)
 - [Two Numbers]: ![Two Numbers](./screenshots/two_numbers.png)
-- [Custom Delimiter]: ![Custom Delimiter](./screenshots/custom_delimiter.png)
+- [Custom Delimiter]: ![Custom Delimiter](./screenshots/multiple.png)
 - [Negative Number]: ![Negative Number](./screenshots/negative_number.png)
 
 ## TDD Process
